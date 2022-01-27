@@ -15,7 +15,7 @@ namespace DataStructures
             var linkedList = new LinkedList(firstNode);
             linkedList.DeleteFirst();
             linkedList.Print();
-            Console.WriteLine(linkedList.Contains(40));
+            Console.WriteLine(linkedList.Contains(10));
             Console.ReadKey();
         }
     }

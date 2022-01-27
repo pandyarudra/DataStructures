@@ -82,16 +82,18 @@ namespace DataStructures.Classes
         public bool Contains(int val)
         {
             var current = first;
-            do
+            var valueFound = false;
+            while (current != null && valueFound != true)
             {
                 if (current.val == val)
                 {
-                    return true;
+                    valueFound = true;
+                    break;
                 }
                 current = current.next;
-            } while (current.val != val);
+            }
 
-            return false;
+            return valueFound;
         }
 
         public void Print()
