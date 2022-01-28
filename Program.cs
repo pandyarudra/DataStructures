@@ -13,9 +13,11 @@ namespace DataStructures
             firstNode.next.next.next = new Node(40);
 
             var linkedList = new LinkedList(firstNode);
-            linkedList.DeleteFirst();
-            linkedList.Print();
-            Console.WriteLine(linkedList.Contains(10));
+            linkedList.AddLast(500);
+            linkedList.DeleteLast();
+            // Console.WriteLine(linkedList.last.val);
+            // linkedList.Print();
+            Console.WriteLine(linkedList.IndexOf(100));
             Console.ReadKey();
         }
     }

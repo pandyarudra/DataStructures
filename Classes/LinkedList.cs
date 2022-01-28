@@ -37,14 +37,16 @@ namespace DataStructures.Classes
         public Node AddLast(int val)
         {
             var newNode = new Node(val, null);
-            last.next = newNode;       
-
+            last.next = newNode;
+            last = newNode;
             return newNode;
         }
 
         public void DeleteFirst()
         {
-            first = first.next;
+            var second = first.next;
+            first = null;
+            first = second;
         }
 
         public void DeleteLast()
@@ -56,27 +58,27 @@ namespace DataStructures.Classes
                 {
                     current.next = null;
                     last = current;
+                    break;
                 }
-            } while (current.next.next != null);
+                current = current.next;
+            } while (current != null);
         }
 
         public int IndexOf(int val)
         {
             var index = 0;
             var current = first;
-            while (current.val != val)
+            while (current != null)
             {
                 if (val == current.val)
                 {
-                    break;
+                    return index;
                 } 
-                else
-                {
-                    current = current.next;
-                    index++;
-                }
+
+                current = current.next;
+                index++;
             }
-            return index;
+            return -1;
         }
 
         public bool Contains(int val)
